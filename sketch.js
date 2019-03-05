@@ -4,7 +4,7 @@ let sentence = "";
 let resultP;
 let leftDiv;
 let counter;
-let cnv, myRec, btn, txt;
+let cnv, myRec, btn, txt, img;
 
 function setup() {
     let SpeechRecognition = window.webkitSpeechRecognition ||
@@ -12,6 +12,7 @@ function setup() {
         window.msSpeechRecognition ||
         window.oSpeechRecognition ||
         window.SpeechRecognition;
+
 
     cnv = createCanvas(400, 600);
     background('red');
@@ -44,11 +45,23 @@ function draw() {}
 
 function showResult() {
     if (myRec.resultValue == true) {
-        sentence = myRec.resultString;
+        sentence = myRec.resultString.split(' ').pop();
         resultP.html(sentence);
-
-        if (sentence.includes("orange")) {
+        if(sentence.includes("orange")){
+            switchImage('assets/orange.png');
         }
+        if(sentence.includes("lemon")){
+            switchImage('assets/lemon.png');
+        }    
+    }
+}
 
+function switchImage(url){
+    if(img == undefined){
+        img = createImg(url)
+        .position(width/2, height/2)
+        .style("width:50px;height:50px");
+    }else{
+        img.attribute('src', url)
     }
 }
