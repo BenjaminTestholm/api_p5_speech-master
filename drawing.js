@@ -22,9 +22,23 @@ function setup() {
         myRec.start();
     }    
     displayWord = createDiv();
+        
+    pen = {
+        x: width/2, 
+        y: height/2,
+        size: 6,
+        col: color(255.255,255),
+        show: function(){
+            fill(this.col),
+            ellipseMode(CENTER)
+            ellipse(this.x,this.y,this.size,this.size)
+        }
+    }
+    console.log("pen findes, og dens x værdi er: " + pen.x);
 }
 
 function draw() {
+    pen.show()
 }
 
 function showResult() {

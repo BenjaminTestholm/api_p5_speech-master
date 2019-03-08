@@ -14,7 +14,7 @@ function setup() {
         window.SpeechRecognition;
 
 
-    cnv = createCanvas(400, 600);
+    cnv = createCanvas(400, 400);
     background('red');
     txt = createElement("h5", "Say something..")
         .position(40, 200)
@@ -49,18 +49,18 @@ function showResult() {
         resultP.html(sentence);
         if(sentence.includes("sara")){
             switchImage('assets/Sara.jpg');
-        }
+            }
         if(sentence.includes("benjamin")){
             switchImage('assets/Benjamin.jpg');
-        }    
+            }    
         if(sentence.includes("fodbold")){
             switchImage('assets/fodbold.jpg');
             }
         
         if(sentence.includes("basket")){
         switchImage('assets/basket.jpg');
-    }
-}   
+        }
+    }   
 }
 
 
