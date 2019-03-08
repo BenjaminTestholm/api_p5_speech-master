@@ -47,14 +47,22 @@ function showResult() {
     if (myRec.resultValue == true) {
         sentence = myRec.resultString.split(' ').pop();
         resultP.html(sentence);
-        if(sentence.includes("orange")){
-            switchImage('assets/orange.png');
+        if(sentence.includes("sara")){
+            switchImage('assets/Sara.jpg');
         }
-        if(sentence.includes("lemon")){
-            switchImage('assets/lemon.png');
+        if(sentence.includes("benjamin")){
+            switchImage('assets/Benjamin.jpg');
         }    
+        if(sentence.includes("fodbold")){
+            switchImage('assets/fodbold.jpg');
+            }
+        
+        if(sentence.includes("basket")){
+        switchImage('assets/basket.jpg');
     }
+}   
 }
+
 
 function switchImage(url){
     if(img == undefined){
